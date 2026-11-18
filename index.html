@@ -1,293 +1,229 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dyt. Adınız Soyadınız | Diyetisyen</title>
-<style>
-  :root { --yesil:#3f8f5b; --koyu:#1f3d2b; --acik:#eef7f0; --gri:#555; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:'Segoe UI',Arial,sans-serif; color:#222; line-height:1.6; }
-  header { position:sticky; top:0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.08); z-index:10; }
-  nav { max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:14px 20px; }
-  nav .logo { font-weight:700; color:var(--yesil); font-size:1.2rem; }
-  nav a { margin-left:18px; text-decoration:none; color:var(--koyu); font-weight:500; }
-  .hero { background:linear-gradient(rgba(31,61,43,.55),rgba(31,61,43,.55)),url('img/hero.jpg') center/cover; color:#fff; text-align:center; padding:120px 20px; }
-  .hero h1 { font-size:2.5rem; margin-bottom:12px; }
-  .hero p { max-width:600px; margin:0 auto 24px; }
-  .btn { display:inline-block; background:var(--yesil); color:#fff; padding:12px 28px; border:none; border-radius:30px; font-size:1rem; cursor:pointer; text-decoration:none; }
-  .btn:hover { background:var(--koyu); }
-  .btn:disabled { background:#aaa; cursor:not-allowed; }
-  section { max-width:1100px; margin:auto; padding:70px 20px; }
-  h2 { color:var(--koyu); text-align:center; margin-bottom:30px; font-size:2rem; }
-  .hakkimda { display:flex; gap:40px; align-items:center; flex-wrap:wrap; }
-  .hakkimda img { width:320px; max-width:100%; border-radius:16px; }
-  .hakkimda div { flex:1; min-width:260px; }
-  .kartlar { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
-  .kart { background:var(--acik); border-radius:16px; overflow:hidden; text-align:center; padding-bottom:16px; }
-  .kart img { width:100%; height:180px; object-fit:cover; }
-  .kart h3 { margin:14px 0 6px; color:var(--koyu); }
-  .kart p { padding:0 14px; color:var(--gri); }
-  .kutu { background:var(--acik); border-radius:16px; padding:30px; max-width:700px; margin:auto; }
-  label { display:block; margin-top:14px; font-weight:600; }
-  input, select, textarea { width:100%; padding:10px; margin-top:6px; border:1px solid #ccc; border-radius:8px; font-size:1rem; font-family:inherit; }
-  .adim { display:none; }
-  .adim.aktif { display:block; }
-  .durum { text-align:center; margin-bottom:20px; font-weight:600; color:var(--yesil); }
-  .takvim-ust { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
-  .takvim-ust button { background:var(--yesil); color:#fff; border:none; border-radius:8px; padding:6px 14px; cursor:pointer; }
-  .gunler { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; text-align:center; }
-  .gunler .baslik { font-weight:700; color:var(--koyu); font-size:.9rem; }
-  .gun { padding:10px 0; border-radius:8px; background:#fff; cursor:pointer; border:1px solid #ddd; }
-  .gun:hover { background:#d7eedd; }
-  .gun.pasif { background:#f1f1f1; color:#bbb; cursor:not-allowed; }
-  .gun.secili { background:var(--yesil); color:#fff; }
-  .saatler { display:grid; grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); gap:8px; margin-top:16px; }
-  .saat { padding:8px; text-align:center; background:#fff; border:1px solid var(--yesil); color:var(--yesil); border-radius:8px; cursor:pointer; }
-  .saat.secili { background:var(--yesil); color:#fff; }
-  .saat.dolu { background:#eee; border-color:#ccc; color:#aaa; cursor:not-allowed; text-decoration:line-through; }
-  .onay { text-align:center; }
-  .onay h3 { color:var(--yesil); margin-bottom:10px; }
-  .gizli { display:none; }
-  footer { background:var(--koyu); color:#fff; text-align:center; padding:30px 20px; }
-  @media(max-width:600px){ nav a{display:none;} .hero h1{font-size:1.8rem;} }
-</style>
-</head>
-<body>
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-<header>
-  <nav>
-    <span class="logo">🥗 Dyt. Adınız Soyadınız</span>
-    <div>
-      <a href="#hakkimda">Hakkımda</a>
-      <a href="#hizmetler">Hizmetler</a>
-      <a href="#randevu">Randevu Al</a>
-      <a href="#iletisim">İletişim</a>
-    </div>
-  </nav>
-</header>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
 
-<div class="hero">
-  <h1>Sağlıklı Beslenme, Kalıcı Değişim</h1>
-  <p>Size özel beslenme programlarıyla hedeflerinize sağlıklı ve sürdürülebilir şekilde ulaşın.</p>
-  <a href="#randevu" class="btn">Hemen Randevu Al</a>
-</div>
+				<!-- Intro -->
+					<div id="intro">
+						<h1>This is<br />
+						Massively</h1>
+						<p>A free, fully responsive HTML5 + CSS3 site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
+						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>.</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
 
-<section id="hakkimda">
-  <h2>Hakkımda</h2>
-  <div class="hakkimda">
-    <img src="img/diyetisyen.jpg" alt="Diyetisyen">
-    <div>
-      <p>Merhaba, ben Dyt. Adınız Soyadınız. Beslenme ve diyetetik alanında uzmanım. Kilo yönetimi, sporcu beslenmesi, hastalıklarda beslenme ve çocuk beslenmesi konularında danışanlarıma kişiye özel programlar hazırlıyorum.</p>
-      <br>
-      <p>Amacım yasaklarla dolu diyetler değil, hayatınıza uyan, keyif alarak sürdürebileceğiniz bir beslenme düzeni kurmaktır.</p>
-    </div>
-  </div>
-</section>
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Massively</a>
+					</header>
 
-<section id="hizmetler" style="background:#fff">
-  <h2>Hizmetlerim</h2>
-  <div class="kartlar">
-    <div class="kart"><img src="img/yemek1.jpg" alt="Kilo yönetimi"><h3>Kilo Yönetimi</h3><p>Kişiye özel, sürdürülebilir kilo verme ve koruma programları.</p></div>
-    <div class="kart"><img src="img/yemek2.jpg" alt="Sporcu beslenmesi"><h3>Sporcu Beslenmesi</h3><p>Performansınızı artıran beslenme planları.</p></div>
-    <div class="kart"><img src="img/yemek3.jpg" alt="Klinik beslenme"><h3>Hastalıklarda Beslenme</h3><p>Diyabet, tansiyon, tiroid gibi durumlar için beslenme desteği.</p></div>
-  </div>
-</section>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">This is Massively</a></li>
+							<li><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
 
-<section id="randevu">
-  <h2>Randevu Al</h2>
-  <div class="kutu">
-    <div class="durum" id="durum">Adım 1 / 3: Ön Değerlendirme Anketi</div>
+				<!-- Main -->
+					<div id="main">
 
-    <!-- ADIM 1: ANKET -->
-    <form id="anketFormu" class="adim aktif">
-      <label>Ad Soyad<input type="text" id="ad" required></label>
-      <label>E-posta<input type="email" id="eposta" required></label>
-      <label>Telefon<input type="tel" id="telefon" placeholder="05xx xxx xx xx" required></label>
-      <label>Yaş<input type="number" id="yas" min="5" max="100" required></label>
-      <label>Boy (cm)<input type="number" id="boy" required></label>
-      <label>Kilo (kg)<input type="number" id="kilo" required></label>
-      <label>Hedefiniz
-        <select id="hedef" required>
-          <option value="">Seçiniz</option>
-          <option>Kilo vermek</option>
-          <option>Kilo almak</option>
-          <option>Kilo korumak</option>
-          <option>Sağlıklı beslenmek</option>
-          <option>Hastalık nedeniyle diyet</option>
-        </select>
-      </label>
-      <label>Bilinen hastalık veya alerjileriniz<textarea id="hastalik" rows="3"></textarea></label>
-      <label>Günlük fiziksel aktivite düzeyiniz
-        <select id="aktivite" required>
-          <option value="">Seçiniz</option>
-          <option>Çok az</option>
-          <option>Haftada 1-2 gün</option>
-          <option>Haftada 3-5 gün</option>
-          <option>Neredeyse her gün</option>
-        </select>
-      </label>
-      <label style="font-weight:400"><input type="checkbox" id="kvkk" required style="width:auto"> Kişisel verilerimin randevu amacıyla işlenmesini kabul ediyorum (KVKK).</label>
-      <br>
-      <button type="submit" class="btn">Anketi Tamamla ve Devam Et</button>
-    </form>
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<span class="date">April 25, 2017</span>
+									<h2><a href="#">And this is a<br />
+									massive headline</a></h2>
+									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
+									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
+									amet nullam sed etiam veroeros.</p>
+								</header>
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+								<ul class="actions special">
+									<li><a href="#" class="button large">Full Story</a></li>
+								</ul>
+							</article>
 
-    <!-- ADIM 2: TAKVİM -->
-    <div id="takvimAlani" class="adim">
-      <div class="takvim-ust">
-        <button id="oncekiAy">◀</button>
-        <strong id="ayBasligi"></strong>
-        <button id="sonrakiAy">▶</button>
-      </div>
-      <div class="gunler" id="gunler"></div>
-      <h3 style="margin-top:20px">Saat seçin</h3>
-      <div class="saatler" id="saatler"><p>Önce bir gün seçin.</p></div>
-      <br>
-      <button class="btn" id="randevuOnayla" disabled>Randevuyu Onayla</button>
-    </div>
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">April 24, 2017</span>
+										<h2><a href="#">Sed magna<br />
+										ipsum faucibus</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 22, 2017</span>
+										<h2><a href="#">Primis eget<br />
+										imperdiet lorem</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 18, 2017</span>
+										<h2><a href="#">Ante mattis<br />
+										interdum dolor</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 14, 2017</span>
+										<h2><a href="#">Tempus sed<br />
+										nulla imperdiet</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 11, 2017</span>
+										<h2><a href="#">Odio magna<br />
+										sed consectetur</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 7, 2017</span>
+										<h2><a href="#">Augue lorem<br />
+										primis vestibulum</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+							</section>
 
-    <!-- ADIM 3: ONAY -->
-    <div id="onayAlani" class="adim onay">
-      <h3>✅ Randevunuz oluşturuldu!</h3>
-      <p id="onayMetni"></p>
-      <br>
-      <p>Onay ve hatırlatma bilgilendirmesi e-posta adresinize gönderildi. Randevuyu takviminize de ekleyebilirsiniz:</p>
-      <br>
-      <button class="btn" id="takvimeEkle">📅 Takvimime Ekle (Hatırlatıcılı)</button>
-    </div>
-  </div>
-</section>
+						<!-- Footer -->
+							<footer>
+								<div class="pagination">
+									<!--<a href="#" class="previous">Prev</a>-->
+									<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer>
 
-<section id="iletisim" style="background:var(--acik)" >
-  <h2>İletişim</h2>
-  <p style="text-align:center">📍 Adres: Örnek Mah. Örnek Sok. No:1, İstanbul<br>📞 0555 000 00 00<br>✉️ ornek@mail.com</p>
-</section>
+					</div>
 
-<footer>© 2026 Dyt. Adınız Soyadınız. Tüm hakları saklıdır.</footer>
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
 
-<script>
-/* ========== AYARLAR ========== */
-// Randevu saatleri
-const SAATLER = ["09:00","10:00","11:00","13:00","14:00","15:00","16:00"];
-// Çalışılmayan günler: 0=Pazar, 6=Cumartesi
-const KAPALI_GUNLER = [0,6];
-// Randevu süresi (dakika)
-const SURE_DK = 45;
-// Formspree adresi (aşağıdaki açıklamaya bakın). Boşsa mail gönderimi atlanır.
-const FORMSPREE_URL = ""; // örn: https://formspree.io/f/abcdwxyz
-/* ============================== */
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
 
-const AYLAR = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
-const GUNLER = ["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"];
-let bugun = new Date(); bugun.setHours(0,0,0,0);
-let gosterilen = new Date(bugun.getFullYear(), bugun.getMonth(), 1);
-let seciliGun = null, seciliSaat = null, hasta = {}, sonRandevu = null;
+			</div>
 
-function adimGoster(id, metin){
-  document.querySelectorAll('.adim').forEach(a=>a.classList.remove('aktif'));
-  document.getElementById(id).classList.add('aktif');
-  document.getElementById('durum').textContent = metin;
-}
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-// Dolu saatler tarayıcıda saklanır (basit sürüm)
-function doluSaatler(){ return JSON.parse(localStorage.getItem('randevular')||'[]'); }
-function anahtar(d,s){ return d.toDateString()+' '+s; }
-
-// ANKET
-document.getElementById('anketFormu').addEventListener('submit', e=>{
-  e.preventDefault();
-  hasta = {
-    ad:ad.value, eposta:eposta.value, telefon:telefon.value, yas:yas.value,
-    boy:boy.value, kilo:kilo.value, hedef:hedef.value,
-    hastalik:hastalik.value, aktivite:aktivite.value
-  };
-  adimGoster('takvimAlani','Adım 2 / 3: Tarih ve Saat Seçimi');
-  takvimCiz();
-});
-
-// TAKVİM
-function takvimCiz(){
-  const y = gosterilen.getFullYear(), m = gosterilen.getMonth();
-  document.getElementById('ayBasligi').textContent = AYLAR[m]+' '+y;
-  const kap = document.getElementById('gunler');
-  kap.innerHTML = GUNLER.map(g=>`<div class="baslik">${g}</div>`).join('');
-  const ilkGun = (new Date(y,m,1).getDay()+6)%7;
-  for(let i=0;i<ilkGun;i++) kap.innerHTML += '<div></div>';
-  const gunSayisi = new Date(y,m+1,0).getDate();
-  for(let g=1; g<=gunSayisi; g++){
-    const t = new Date(y,m,g);
-    const pasif = t<=bugun || KAPALI_GUNLER.includes(t.getDay());
-    const div = document.createElement('div');
-    div.className = 'gun'+(pasif?' pasif':'')+(seciliGun&&seciliGun.getTime()===t.getTime()?' secili':'');
-    div.textContent = g;
-    if(!pasif) div.onclick = ()=>{ seciliGun=t; seciliSaat=null; takvimCiz(); saatCiz(); };
-    kap.appendChild(div);
-  }
-}
-function saatCiz(){
-  const kap = document.getElementById('saatler'); kap.innerHTML='';
-  const dolu = doluSaatler().map(r=>r.k);
-  SAATLER.forEach(s=>{
-    const d = document.createElement('div');
-    const doluMu = dolu.includes(anahtar(seciliGun,s));
-    d.className = 'saat'+(doluMu?' dolu':'')+(seciliSaat===s?' secili':'');
-    d.textContent = s;
-    if(!doluMu) d.onclick = ()=>{ seciliSaat=s; saatCiz(); document.getElementById('randevuOnayla').disabled=false; };
-    kap.appendChild(d);
-  });
-}
-document.getElementById('oncekiAy').onclick = ()=>{ gosterilen.setMonth(gosterilen.getMonth()-1); takvimCiz(); };
-document.getElementById('sonrakiAy').onclick = ()=>{ gosterilen.setMonth(gosterilen.getMonth()+1); takvimCiz(); };
-
-// RANDEVU ONAYI
-document.getElementById('randevuOnayla').onclick = async ()=>{
-  const [sa,dk] = seciliSaat.split(':').map(Number);
-  const bas = new Date(seciliGun); bas.setHours(sa,dk,0,0);
-  const bit = new Date(bas.getTime()+SURE_DK*60000);
-  sonRandevu = {bas,bit};
-
-  const liste = doluSaatler();
-  liste.push({k:anahtar(seciliGun,seciliSaat), hasta});
-  localStorage.setItem('randevular', JSON.stringify(liste));
-
-  const tarihMetni = bas.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',weekday:'long'});
-  document.getElementById('onayMetni').textContent = `${tarihMetni}, saat ${seciliSaat}`;
-
-  // Diyetisyene ve hastaya e-posta (Formspree)
-  if(FORMSPREE_URL){
-    try{
-      await fetch(FORMSPREE_URL,{
-        method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body: JSON.stringify({
-          _subject:'Yeni randevu: '+hasta.ad,
-          randevu: tarihMetni+' '+seciliSaat,
-          ...hasta
-        })
-      });
-    }catch(err){ console.log('Mail gönderilemedi', err); }
-  }
-  adimGoster('onayAlani','Adım 3 / 3: Onay');
-};
-
-// TAKVİME EKLE (.ics dosyası, hatırlatıcılı)
-document.getElementById('takvimeEkle').onclick = ()=>{
-  const f = d => d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
-  const ics = [
-    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Diyetisyen//TR','BEGIN:VEVENT',
-    'UID:'+Date.now()+'@diyetisyen',
-    'DTSTAMP:'+f(new Date()),
-    'DTSTART:'+f(sonRandevu.bas),
-    'DTEND:'+f(sonRandevu.bit),
-    'SUMMARY:Diyetisyen Randevusu',
-    'DESCRIPTION:Dyt. Adınız Soyadınız ile randevunuz.',
-    'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:Yarın diyetisyen randevunuz var','END:VALARM',
-    'BEGIN:VALARM','TRIGGER:-PT2H','ACTION:DISPLAY','DESCRIPTION:2 saat sonra diyetisyen randevunuz var','END:VALARM',
-    'END:VEVENT','END:VCALENDAR'
-  ].join('\r\n');
-  const blob = new Blob([ics],{type:'text/calendar'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download = 'randevu.ics'; a.click();
-};
-</script>
-</body>
+	</body>
 </html>
