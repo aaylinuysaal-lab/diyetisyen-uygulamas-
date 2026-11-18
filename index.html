@@ -120,13 +120,13 @@
 </div>
 
 <section id="hakkimda">
-  <h2>Proje Vizyonumuz & Felsefemiz</h2>
+  <h2>Proje Vizyonumuz</h2>
   <div class="hakkimda">
-    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=700&q=80" alt="Klinik Laboratuvar Çalışması">
+    <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=700&q=80" alt="Klinik Beslenme ve Sağlıklı Yaşam">
     <div>
-      <p>Beslenme, yalnızca kalori hesabı yapmak değil; hücresel düzeyde yaşam kalitesini ve metabolik harmoniyi yeniden tesis etme sanatıdır.</p>
+      <p>Beslenme, yalnızca kalori hesabı yapmak değil; hücresel düzeyde yaşam kalitesini ve metabolik harmoniyi yeniden tesis etme sanatıdır[span_1](start_span)[span_1](end_span).</p>
       <p>Geleceğin klinik uzmanları olarak yola çıktığımız bu projede; bireylerin fizyolojik sınırlarını, antropometrik verilerini ve klinik geçmişlerini süzgeçten geçirerek tamamen kişiselleştirilmiş, sürdürülebilir beslenme haritaları çıkarıyoruz.</p>
-      <p>Amacımız; geçici diyet trendleriyle vakit kaybetmek yerine, bedeninizin geribildirimlerini dinleyen ve ömür boyu sürecek bilimsel bir beslenme bilinci inşa etmektir.</p>
+      <p>Amacımız; geçici diyet trendleriyle vakit kaybetmek yerine, bedeninizin geribildirimlerini dinleyen ve ömür boyu sürecek bilimsel bir beslenme bilinci inşa etmektir[span_2](start_span)[span_2](end_span).</p>
     </div>
   </div>
 </section>
@@ -193,14 +193,14 @@
 
     <!-- ADIM 1: ANKET -->
     <form id="anketFormu" class="adim aktif">
-      <label>Ad Soyad<input type="text" id="ad" required placeholder="Adınızı ve soyadınızı giriniz"></label>
-      <label>E-posta<input type="email" id="eposta" required placeholder="ornek@mail.com"></label>
-      <label>Telefon<input type="tel" id="telefon" placeholder="05xx xxx xx xx" required></label>
-      <label>Yaş<input type="number" id="yas" min="5" max="100" required placeholder="Yaşınız"></label>
-      <label>Boy (cm)<input type="number" id="boy" required placeholder="Örn: 165"></label>
-      <label>Kilo (kg)<input type="number" step="0.1" id="kilo" required placeholder="Örn: 60"></label>
+      <label>Ad Soyad<input type="text" id="ad" name="Ad_Soyad" required placeholder="Adınızı ve soyadınızı giriniz"></label>
+      <label>E-posta<input type="email" id="eposta" name="E_posta" required placeholder="ornek@mail.com"></label>
+      <label>Telefon<input type="tel" id="telefon" name="Telefon" placeholder="05xx xxx xx xx" required></label>
+      <label>Yaş<input type="number" id="yas" name="Yas" min="5" max="100" required placeholder="Yaşınız"></label>
+      <label>Boy (cm)<input type="number" id="boy" name="Boy" required placeholder="Örn: 165"></label>
+      <label>Kilo (kg)<input type="number" step="0.1" id="kilo" name="Kilo" required placeholder="Örn: 60"></label>
       <label>Hedefiniz
-        <select id="hedef" required>
+        <select id="hedef" name="Hedef" required>
           <option value="">Seçiniz</option>
           <option>Kilo vermek</option>
           <option>Kilo almak</option>
@@ -209,9 +209,9 @@
           <option>Hastalık nedeniyle tıbbi beslenme</option>
         </select>
       </label>
-      <label>Bilinen rahatsızlık veya alerjileriniz<textarea id="hastalik" rows="3" placeholder="Varsa kronik rahatsızlıklarınız, gıda alerjileriniz..."></textarea></label>
+      <label>Bilinen rahatsızlık veya alerjileriniz<textarea id="hastalik" name="Hastalik_Alerji" rows="3" placeholder="Varsa kronik rahatsızlıklarınız, gıda alerjileriniz..."></textarea></label>
       <label>Günlük fiziksel aktivite düzeyiniz
-        <select id="aktivite" required>
+        <select id="aktivite" name="Aktivite" required>
           <option value="">Seçiniz</option>
           <option>Çok az / Hareketsiz yaşam</option>
           <option>Haftada 1-2 gün hafif egzersiz</option>
@@ -219,6 +219,10 @@
           <option>Haftanın her günü aktif / Yoğun antrenman</option>
         </select>
       </label>
+      
+      <!-- Gizli input: Seçilen randevu saatini formspree'ye iletmek için -->
+      <input type="hidden" id="gizliRandevuZamani" name="Randevu_Zamani">
+
       <label style="font-weight:400; font-size:0.85rem; color:var(--text-muted); margin-top:20px;">
         <input type="checkbox" id="kvkk" required style="width:auto; margin-right:8px;"> Kişisel verilerimin klinik eğitim ve randevu amaçlarıyla işlenmesini kabul ediyorum (KVKK).
       </label>
@@ -298,7 +302,7 @@ function adimGoster(id, metin){
 function randevulariGetir(){ return JSON.parse(localStorage.getItem('klinik_randevular')||'[]'); }
 function randevulariKaydet(liste){ localStorage.setItem('klinik_randevular', JSON.stringify(liste)); randevuListesiniGuncelle(); }
 
-document.getElementById('anketFormu').addEventListener('submit', e=>{
+document.getElementById('anketFormu').addEventListener('submit', function(e){
   e.preventDefault();
   hasta = {
     id: Date.now(),
@@ -356,11 +360,13 @@ function saatCiz(){
 document.getElementById('oncekiAy').onclick = ()=>{ gosterilen.setMonth(gosterilen.getMonth()-1); takvimCiz(); };
 document.getElementById('sonrakiAy').onclick = ()=>{ gosterilen.setMonth(gosterilen.getMonth()+1); takvimCiz(); };
 
-document.getElementById('randevuOnayla').onclick = ()=>{
+document.getElementById('randevuOnayla').onclick = async function(){
   const [sa,dk] = seciliSaat.split(':').map(Number);
   const bas = new Date(seciliGun); bas.setHours(sa,dk,0,0);
   const bit = new Date(bas.getTime()+SURE_DK*60000);
   sonRandevu = {bas,bit};
+
+  const tarihMetniStr = bas.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',weekday:'long'}) + ', saat ' + seciliSaat;
 
   const yeniRandevu = {
     id: hasta.id,
@@ -368,21 +374,33 @@ document.getElementById('randevuOnayla').onclick = ()=>{
     eposta: hasta.eposta,
     gunStr: seciliGun.toDateString(),
     saat: seciliSaat,
-    tarihMetni: bas.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',weekday:'long'}) + ', saat ' + seciliSaat
+    tarihMetni: tarihMetniStr
   };
+
+  document.getElementById('gizliRandevuZamani').value = tarihMetniStr;
+
+  const formElement = document.getElementById('anketFormu');
+  const formData = new FormData(formElement);
+  try {
+    await fetch("https://formspree.io/f/xqpqbwdr", {
+      method: "POST",
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+  } catch (error) {
+    console.error("Form gönderim hatası:", error);
+  }
 
   const liste = randevulariGetir();
   liste.push(yeniRandevu);
   randevulariKaydet(liste);
 
-  document.getElementById('modalMetni').textContent = `${yeniRandevu.tarihMetni} tarihinde klinik ön değerlendirme randevunuz başarıyla oluşturuldu.`;
+  document.getElementById('modalMetni').textContent = `${tarihMetniStr} tarihinde klinik ön değerlendirme randevunuz başarıyla oluşturuldu. Bilgileriniz e-posta ile ekibimize iletildi.`;
   
-  // Google Takvim Linki
   const f = d => d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
   const gLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Klinik Beslenme Randevusu")}&dates=${f(bas)}/${f(bit)}&details=${encodeURIComponent("Akdeniz Üniversitesi Beslenme ve Diyetetik Bölümü Klinik Ön Değerlendirme Randevusu.")}&location=${encodeURIComponent("Akdeniz Üniversitesi, Antalya")}`;
   document.getElementById('googleTakvimBtn').href = gLink;
 
-  // Apple / Outlook (.ics) Dosyası İndirme Butonu
   const ics = [
     'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Klinik Beslenme Projesi//TR','BEGIN:VEVENT',
     'UID:'+Date.now()+'@klinikproje',
@@ -403,7 +421,6 @@ document.getElementById('randevuOnayla').onclick = ()=>{
     a.click();
   };
 
-  // Modal Aç
   document.getElementById('onayModal').style.display = 'flex';
 };
 
