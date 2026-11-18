@@ -6,97 +6,97 @@
 <title>Klinik Beslenme ve Diyet Projesi</title>
 <style>
   :root { 
-    --bg-main: #f7f9f6; 
+    --bg-main: #f8faf7; 
     --bg-box: #ffffff; 
-    --text-main: #2e3830; 
-    --text-muted: #5a665c; 
-    --accent: #21b2a6; 
-    --accent-hover: #1b9388;
-    --border: #e2e8e4;
+    --text-main: #252f28; 
+    --text-muted: #525e55; 
+    --accent: #2c7a51; 
+    --accent-hover: #215e3e;
+    --border: #e1e8e2;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.7; }
   
-  header { background: #ffffff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
-  nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 20px; }
-  nav .logo { font-weight: 700; color: var(--accent); font-size: 1.2rem; letter-spacing: 1px; text-transform: uppercase; }
-  nav div a { margin-left: 24px; text-decoration: none; color: var(--text-muted); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+  header { background: #ffffff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
+  nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 22px 20px; }
+  nav .logo { font-weight: 700; color: var(--accent); font-size: 1.25rem; letter-spacing: 1.5px; text-transform: uppercase; }
+  nav div a { margin-left: 28px; text-decoration: none; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
   nav div a:hover { color: var(--accent); }
 
   .hero { 
-    background: linear-gradient(rgba(31, 34, 39, 0.6), rgba(31, 34, 39, 0.75)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=80') center/cover; 
-    text-align: center; padding: 140px 20px; color: #fff; border-bottom: 1px solid var(--border);
+    background: linear-gradient(rgba(20, 35, 25, 0.65), rgba(20, 35, 25, 0.8)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80') center/cover; 
+    text-align: center; padding: 160px 20px; color: #fff; border-bottom: 1px solid var(--border);
   }
-  .hero h1 { font-size: 3.2rem; margin-bottom: 20px; font-weight: 700; letter-spacing: 1.5px; }
-  .hero p { max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem; color: #e2e8e4; }
+  .hero h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; letter-spacing: 2px; }
+  .hero p { max-width: 750px; margin: 0 auto 35px; font-size: 1.2rem; color: #e2e8e4; font-weight: 300; }
   
-  .btn { display: inline-block; background: var(--accent); color: #fff; padding: 14px 32px; border: none; border-radius: 4px; font-size: 0.95rem; font-weight: 700; cursor: pointer; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; box-shadow: 0 4px 15px rgba(33, 178, 166, 0.2); text-align: center; }
+  .btn { display: inline-block; background: var(--accent); color: #fff; padding: 14px 34px; border: none; border-radius: 4px; font-size: 0.9rem; font-weight: 700; cursor: pointer; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; text-align: center; box-shadow: 0 4px 15px rgba(44, 122, 81, 0.2); }
   .btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
   .btn:disabled { background: #cbd5e1; cursor: not-allowed; box-shadow: none; }
-  .btn-iptal { background: #e74c3c; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; box-shadow: none; }
-  .btn-iptal:hover { background: #c0392b; }
+  .btn-iptal { background: #d9534f; padding: 6px 12px; font-size: 0.8rem; border-radius: 4px; box-shadow: none; letter-spacing: 0.5px; }
+  .btn-iptal:hover { background: #c9302c; }
 
-  section { max-width: 1100px; margin: auto; padding: 80px 20px; border-bottom: 1px solid var(--border); }
-  h2 { text-align: center; margin-bottom: 40px; font-size: 2.4rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; }
+  section { max-width: 1100px; margin: auto; padding: 90px 20px; border-bottom: 1px solid var(--border); }
+  h2 { text-align: center; margin-bottom: 50px; font-size: 2.3rem; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
 
-  .hakkimda { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; background: var(--bg-box); padding: 45px; border-radius: 8px; border: 1px solid var(--border); box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
-  .hakkimda img { width: 320px; max-width: 100%; border-radius: 6px; object-fit: cover; height: 380px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
+  .hakkimda { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; background: var(--bg-box); padding: 50px; border-radius: 6px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+  .hakkimda img { width: 340px; max-width: 100%; border-radius: 4px; object-fit: cover; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
   .hakkimda div { flex: 1; min-width: 280px; }
-  .hakkimda p { color: var(--text-muted); margin-bottom: 16px; font-size: 1.05rem; }
+  .hakkimda p { color: var(--text-muted); margin-bottom: 18px; font-size: 1.05rem; }
 
   .kartlar { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 30px; }
-  .kart { background: var(--bg-box); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: 0.3s; display: flex; flex-direction: column; }
-  .kart:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+  .kart { background: var(--bg-box); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 5px 20px rgba(0,0,0,0.02); transition: 0.3s; display: flex; flex-direction: column; }
+  .kart:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.06); }
   .kart img { width: 100%; height: 210px; object-fit: cover; }
-  .kart-icerik { padding: 30px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
-  .kart h3 { margin-bottom: 12px; color: var(--text-main); font-size: 1.3rem; }
-  .kart p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+  .kart-icerik { padding: 35px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+  .kart h3 { margin-bottom: 15px; color: var(--text-main); font-size: 1.4rem; font-weight: 700; letter-spacing: 0.5px; }
+  .kart p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 25px; }
   
-  .detay-btn { background: #e6f6f5; color: var(--accent); border: 1px solid var(--accent); padding: 10px 18px; border-radius: 4px; font-weight: 600; cursor: pointer; text-align: center; transition: 0.2s; }
-  .detay-btn:hover { background: var(--accent); color: #fff; }
-  .detay-metin { display: none; margin-top: 15px; padding-top: 15px; border-top: 1px dashed var(--border); font-size: 0.9rem; color: #4a5d52; background: #f9fbf9; padding: 12px; border-radius: 4px; }
+  .detay-btn { background: #f0f5f1; color: var(--accent); border: 1px solid var(--border); padding: 10px 18px; border-radius: 4px; font-weight: 600; cursor: pointer; text-align: center; transition: 0.2s; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+  .detay-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .detay-metin { display: none; margin-top: 20px; padding-top: 15px; border-top: 1px dashed var(--border); font-size: 0.9rem; color: var(--text-muted); background: #f8faf8; padding: 15px; border-radius: 4px; }
 
-  .kutu { background: var(--bg-box); border-radius: 8px; padding: 45px; max-width: 750px; margin: auto; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.04); }
-  .durum { text-align: center; margin-bottom: 30px; font-weight: 700; color: var(--accent); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1.5px; }
+  .kutu { background: var(--bg-box); border-radius: 6px; padding: 50px; max-width: 750px; margin: auto; border: 1px solid var(--border); box-shadow: 0 15px 35px rgba(0,0,0,0.03); }
+  .durum { text-align: center; margin-bottom: 35px; font-weight: 700; color: var(--accent); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 2px; }
   
-  label { display: block; margin-top: 18px; font-weight: 600; font-size: 0.9rem; color: var(--text-main); }
-  input, select, textarea { width: 100%; padding: 12px 15px; margin-top: 8px; background: #fdfdfd; border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; color: var(--text-main); font-family: inherit; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(33,178,166,0.1); }
+  label { display: block; margin-top: 20px; font-weight: 600; font-size: 0.9rem; color: var(--text-main); letter-spacing: 0.5px; }
+  input, select, textarea { width: 100%; padding: 14px 16px; margin-top: 8px; background: #fafbfa; border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; color: var(--text-main); font-family: inherit; transition: 0.2s; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); background: #fff; box-shadow: 0 0 0 3px rgba(44,122,81,0.1); }
   select option { background: #fff; color: #333; }
 
   .adim { display: none; }
   .adim.aktif { display: block; }
 
-  .takvim-ust { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-  .takvim-ust button { background: #e6f6f5; color: var(--accent); border: 1px solid var(--border); border-radius: 4px; padding: 8px 16px; cursor: pointer; font-weight: 600; transition: 0.3s; }
+  .takvim-ust { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+  .takvim-ust button { background: #f0f5f1; color: var(--accent); border: 1px solid var(--border); border-radius: 4px; padding: 10px 18px; cursor: pointer; font-weight: 600; transition: 0.3s; }
   .takvim-ust button:hover { background: var(--accent); color: #fff; }
   
   .gunler { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; }
-  .gunler .baslik { font-weight: 700; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; }
-  .gun { padding: 14px 0; border-radius: 4px; background: #fdfdfd; cursor: pointer; border: 1px solid var(--border); font-size: 0.95rem; transition: 0.2s; }
-  .gun:hover { background: #e6f6f5; border-color: var(--accent); }
-  .gun.pasif { background: #f4f6f4; color: #cbd5e1; cursor: not-allowed; border-color: transparent; }
+  .gunler .baslik { font-weight: 700; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; }
+  .gun { padding: 14px 0; border-radius: 4px; background: #fafbfa; cursor: pointer; border: 1px solid var(--border); font-size: 0.95rem; transition: 0.2s; }
+  .gun:hover { background: #f0f5f1; border-color: var(--accent); }
+  .gun.pasif { background: #f1f4f2; color: #cbd5e1; cursor: not-allowed; border-color: transparent; }
   .gun.secili { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-  .saatler { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 20px; }
-  .saat { padding: 10px; text-align: center; background: #fdfdfd; border: 1px solid var(--border); color: var(--accent); border-radius: 4px; cursor: pointer; font-weight: 600; transition: 0.2s; }
-  .saat:hover { border-color: var(--accent); background: #e6f6f5; }
+  .saatler { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 25px; }
+  .saat { padding: 12px; text-align: center; background: #fafbfa; border: 1px solid var(--border); color: var(--accent); border-radius: 4px; cursor: pointer; font-weight: 600; transition: 0.2s; }
+  .saat:hover { border-color: var(--accent); background: #f0f5f1; }
   .saat.secili { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .saat.dolu { background: #f4f6f4; border-color: transparent; color: #cbd5e1; cursor: not-allowed; text-decoration: line-through; }
+  .saat.dolu { background: #f1f4f2; border-color: transparent; color: #cbd5e1; cursor: not-allowed; text-decoration: line-through; }
 
   /* Modal (Karartılmış Arka Plan Popup) */
-  .modal-arkaplan { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
-  .modal-icerik { background: #fff; padding: 40px; border-radius: 8px; max-width: 500px; width: 100%; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.3); animation: scaleIn 0.3s ease; }
-  .modal-icerik h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.8rem; }
-  .modal-icerik p { color: var(--text-muted); margin-bottom: 25px; font-size: 1.05rem; }
-  @keyframes scaleIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .modal-arkaplan { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20,25,22,0.75); z-index: 1000; justify-content: center; align-items: center; padding: 20px; backdrop-filter: blur(3px); }
+  .modal-icerik { background: #fff; padding: 45px; border-radius: 6px; max-width: 520px; width: 100%; text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.3); animation: scaleIn 0.3s ease; border: 1px solid var(--border); }
+  .modal-icerik h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.8rem; letter-spacing: 0.5px; }
+  .modal-icerik p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem; }
+  @keyframes scaleIn { from { transform: scale(0.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
 
-  .randevu-liste-kutu { margin-top: 30px; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid var(--border); text-align: left; }
-  .randevu-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+  .randevu-liste-kutu { margin-top: 40px; background: #fafbfa; padding: 25px; border-radius: 6px; border: 1px solid var(--border); text-align: left; }
+  .randevu-item { display: flex; justify-content: space-between; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; }
   .randevu-item:last-child { border-bottom: none; }
 
-  footer { background: #ffffff; color: var(--text-muted); text-align: center; padding: 40px 20px; font-size: 0.9rem; border-top: 1px solid var(--border); }
-  @media(max-width:768px){ nav div a{display:none;} .hero h1{font-size:2.3rem;} .hakkimda{padding:25px;} }
+  footer { background: #ffffff; color: var(--text-muted); text-align: center; padding: 50px 20px; font-size: 0.9rem; border-top: 1px solid var(--border); letter-spacing: 0.5px; }
+  @media(max-width:768px){ nav div a{display:none;} .hero h1{font-size:2.4rem;} .hakkimda{padding:25px;} }
 </style>
 </head>
 <body>
@@ -122,7 +122,7 @@
 <section id="hakkimda">
   <h2>Proje Vizyonumuz & Felsefemiz</h2>
   <div class="hakkimda">
-    <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=600&q=80" alt="Sağlıklı Diyet Tabağı">
+    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=700&q=80" alt="Klinik Laboratuvar Çalışması">
     <div>
       <p>Beslenme, yalnızca kalori hesabı yapmak değil; hücresel düzeyde yaşam kalitesini ve metabolik harmoniyi yeniden tesis etme sanatıdır.</p>
       <p>Geleceğin klinik uzmanları olarak yola çıktığımız bu projede; bireylerin fizyolojik sınırlarını, antropometrik verilerini ve klinik geçmişlerini süzgeçten geçirerek tamamen kişiselleştirilmiş, sürdürülebilir beslenme haritaları çıkarıyoruz.</p>
@@ -133,7 +133,7 @@
 
 <section id="hizmetler">
   <h2>Klinik Hizmet Alanlarımız ve Detaylar</h2>
-  <p style="text-align:center; color:var(--text-muted); margin-bottom:40px;">İlgilendiğiniz klinik alanın detaylarını incelemek için lütfen üzerine tıklayınız.</p>
+  <p style="text-align:center; color:var(--text-muted); margin-bottom:45px; letter-spacing:0.5px;">İlgilendiğiniz klinik alanın detaylarını incelemek için lütfen üzerine tıklayınız.</p>
   
   <div class="kartlar">
     <div class="kart">
@@ -153,7 +153,7 @@
     </div>
 
     <div class="kart">
-      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Sporcu Beslenmesi">
+      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="Sporcu Beslenmesi">
       <div class="kart-icerik">
         <div>
           <h3>Sporcu Beslenmesi</h3>
@@ -169,7 +169,7 @@
     </div>
 
     <div class="kart">
-      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="Klinik Beslenme">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Klinik Beslenme">
       <div class="kart-icerik">
         <div>
           <h3>Hastalıklarda Tıbbi Beslenme</h3>
@@ -223,7 +223,7 @@
         <input type="checkbox" id="kvkk" required style="width:auto; margin-right:8px;"> Kişisel verilerimin klinik eğitim ve randevu amaçlarıyla işlenmesini kabul ediyorum (KVKK).
       </label>
       <br>
-      <button type="submit" class="btn" style="width:100%; margin-top:20px;">Anketi Tamamla ve Devam Et</button>
+      <button type="submit" class="btn" style="width:100%; margin-top:25px;">Anketi Tamamla ve Devam Et</button>
     </form>
 
     <!-- ADIM 2: TAKVİM -->
@@ -237,12 +237,12 @@
       <h3 style="margin-top:25px; font-size:1rem; color:var(--text-main); text-transform:uppercase; letter-spacing:1px;">Uygun Saat Dilimi Seçin</h3>
       <div class="saatler" id="saatler"><p style="color:var(--text-muted); grid-column:1/-1;">Lütfen önce takvimden aktif bir gün seçiniz.</p></div>
       <br>
-      <button class="btn" id="randevuOnayla" disabled style="width:100%; margin-top:10px;">Randevuyu Kesinleştir</button>
+      <button class="btn" id="randevuOnayla" disabled style="width:100%; margin-top:15px;">Randevuyu Kesinleştir</button>
     </div>
 
     <!-- MEVCUT RANDEVULAR VE İPTAL PANELİ -->
     <div class="randevu-liste-kutu">
-      <h3 style="font-size:1.1rem; color:var(--accent); margin-bottom:10px;">📋 Mevcut Randevularım ve İptal Paneli</h3>
+      <h3 style="font-size:1.1rem; color:var(--accent); margin-bottom:12px; text-transform:uppercase; letter-spacing:1px;">📋 Mevcut Randevularım ve İptal Paneli</h3>
       <div id="aktifRandevularListesi"><p style="color:var(--text-muted); font-size:0.9rem;">Kayıtlı aktif randevunuz bulunmuyor.</p></div>
     </div>
   </div>
@@ -253,17 +253,17 @@
   <div class="modal-icerik">
     <h3>✨ Randevunuz Başarıyla Oluşturuldu!</h3>
     <p id="modalMetni"></p>
-    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:20px;">
-      <a id="googleTakvimBtn" href="#" target="_blank" class="btn" style="background:#4285F4; flex:1; min-width:160px; font-size:0.85rem;">📅 Google Takvim</a>
-      <a id="appleTakvimBtn" href="#" class="btn" style="background:#333333; flex:1; min-width:160px; font-size:0.85rem;">🍏 Apple (.ics)</a>
+    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:25px;">
+      <a id="googleTakvimBtn" href="#" target="_blank" class="btn" style="background:#4285F4; flex:1; min-width:160px; font-size:0.8rem;">📅 Google Takvim</a>
+      <button id="appleTakvimBtn" class="btn" style="background:#333333; flex:1; min-width:160px; font-size:0.8rem;">🍏 Takvime Ekle (.ics)</button>
     </div>
-    <button class="btn" onclick="modalKapat()" style="background:var(--accent); width:100%;">Tamam</button>
+    <button class="btn" onclick="modalKapat()" style="background:var(--accent); width:100%;">Tamam / Ana Sayfa</button>
   </div>
 </div>
 
-<section id="iletisim" style="background: rgba(33,178,166,0.03);">
+<section id="iletisim" style="background: rgba(44,122,81,0.02);">
   <h2>İletişim & Konum</h2>
-  <p style="text-align:center; color: var(--text-muted); font-size: 1.05rem;">
+  <p style="text-align:center; color: var(--text-muted); font-size: 1.05rem; line-height:1.8;">
     📍 <strong>Akdeniz Üniversitesi</strong>, Sağlık Bilimleri Fakültesi, Beslenme ve Diyetetik Bölümü, Dumlupınar Bulvarı, 07058 Konyaaltı/Antalya<br><br>
     ✉️ E-posta: klinikproje@akdeniz.edu.tr | 📞 Danışma Hattı: 0242 310 60 00
   </p>
@@ -382,7 +382,7 @@ document.getElementById('randevuOnayla').onclick = ()=>{
   const gLink = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent("Klinik Beslenme Randevusu")}&dates=${f(bas)}/${f(bit)}&details=${encodeURIComponent("Akdeniz Üniversitesi Beslenme ve Diyetetik Bölümü Klinik Ön Değerlendirme Randevusu.")}&location=${encodeURIComponent("Akdeniz Üniversitesi, Antalya")}`;
   document.getElementById('googleTakvimBtn').href = gLink;
 
-  // Apple / Outlook (.ics) Dosyası Bağlantısı
+  // Apple / Outlook (.ics) Dosyası İndirme Butonu
   const ics = [
     'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Klinik Beslenme Projesi//TR','BEGIN:VEVENT',
     'UID:'+Date.now()+'@klinikproje',
@@ -395,8 +395,8 @@ document.getElementById('randevuOnayla').onclick = ()=>{
     'END:VEVENT','END:VCALENDAR'
   ].join('\r\n');
   const blob = new Blob([ics],{type:'text/calendar;charset=utf-8'});
-  document.getElementById('appleTakvimBtn').onclick = function(e){
-    e.preventDefault();
+  
+  document.getElementById('appleTakvimBtn').onclick = function(){
     const a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
     a.download = 'klinik-randevu.ics';
