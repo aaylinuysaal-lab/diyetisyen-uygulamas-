@@ -3,61 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dyt. Adınız Soyadınız | Diyetisyen</title>
+<title>Dyt. Aylin Uysal | Profesyonel Beslenme ve Yaşam Danışmanlığı</title>
 <style>
-  :root { --yesil:#3f8f5b; --koyu:#1f3d2b; --acik:#eef7f0; --gri:#555; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:'Segoe UI',Arial,sans-serif; color:#222; line-height:1.6; }
-  header { position:sticky; top:0; background:#fff; box-shadow:0 2px 8px rgba(0,0,0,.08); z-index:10; }
-  nav { max-width:1100px; margin:auto; display:flex; justify-content:space-between; align-items:center; padding:14px 20px; }
-  nav .logo { font-weight:700; color:var(--yesil); font-size:1.2rem; }
-  nav a { margin-left:18px; text-decoration:none; color:var(--koyu); font-weight:500; }
-  .hero { background:linear-gradient(rgba(31,61,43,.55),rgba(31,61,43,.55)),url('img/hero.jpg') center/cover; color:#fff; text-align:center; padding:120px 20px; }
-  .hero h1 { font-size:2.5rem; margin-bottom:12px; }
-  .hero p { max-width:600px; margin:0 auto 24px; }
-  .btn { display:inline-block; background:var(--yesil); color:#fff; padding:12px 28px; border:none; border-radius:30px; font-size:1rem; cursor:pointer; text-decoration:none; }
-  .btn:hover { background:var(--koyu); }
-  .btn:disabled { background:#aaa; cursor:not-allowed; }
-  section { max-width:1100px; margin:auto; padding:70px 20px; }
-  h2 { color:var(--koyu); text-align:center; margin-bottom:30px; font-size:2rem; }
-  .hakkimda { display:flex; gap:40px; align-items:center; flex-wrap:wrap; }
-  .hakkimda img { width:320px; max-width:100%; border-radius:16px; }
-  .hakkimda div { flex:1; min-width:260px; }
-  .kartlar { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px; }
-  .kart { background:var(--acik); border-radius:16px; overflow:hidden; text-align:center; padding-bottom:16px; }
-  .kart img { width:100%; height:180px; object-fit:cover; }
-  .kart h3 { margin:14px 0 6px; color:var(--koyu); }
-  .kart p { padding:0 14px; color:var(--gri); }
-  .kutu { background:var(--acik); border-radius:16px; padding:30px; max-width:700px; margin:auto; }
-  label { display:block; margin-top:14px; font-weight:600; }
-  input, select, textarea { width:100%; padding:10px; margin-top:6px; border:1px solid #ccc; border-radius:8px; font-size:1rem; font-family:inherit; }
-  .adim { display:none; }
-  .adim.aktif { display:block; }
-  .durum { text-align:center; margin-bottom:20px; font-weight:600; color:var(--yesil); }
-  .takvim-ust { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
-  .takvim-ust button { background:var(--yesil); color:#fff; border:none; border-radius:8px; padding:6px 14px; cursor:pointer; }
-  .gunler { display:grid; grid-template-columns:repeat(7,1fr); gap:6px; text-align:center; }
-  .gunler .baslik { font-weight:700; color:var(--koyu); font-size:.9rem; }
-  .gun { padding:10px 0; border-radius:8px; background:#fff; cursor:pointer; border:1px solid #ddd; }
-  .gun:hover { background:#d7eedd; }
-  .gun.pasif { background:#f1f1f1; color:#bbb; cursor:not-allowed; }
-  .gun.secili { background:var(--yesil); color:#fff; }
-  .saatler { display:grid; grid-template-columns:repeat(auto-fit,minmax(90px,1fr)); gap:8px; margin-top:16px; }
-  .saat { padding:8px; text-align:center; background:#fff; border:1px solid var(--yesil); color:var(--yesil); border-radius:8px; cursor:pointer; }
-  .saat.secili { background:var(--yesil); color:#fff; }
-  .saat.dolu { background:#eee; border-color:#ccc; color:#aaa; cursor:not-allowed; text-decoration:line-through; }
-  .onay { text-align:center; }
-  .onay h3 { color:var(--yesil); margin-bottom:10px; }
-  .gizli { display:none; }
-  footer { background:var(--koyu); color:#fff; text-align:center; padding:30px 20px; }
-  @media(max-width:600px){ nav a{display:none;} .hero h1{font-size:1.8rem;} }
+  :root { 
+    --bg-main: #1f2227; 
+    --bg-box: #252930; 
+    --text-main: #ffffff; 
+    --text-muted: #b0b5bc; 
+    --accent: #21b2a6; 
+    --accent-hover: #1b9388;
+    --border: rgba(255, 255, 255, 0.15);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.7; }
+  
+  /* Header & Nav */
+  header { background: rgba(31, 34, 39, 0.95); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(5px); }
+  nav { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 20px; }
+  nav .logo { font-weight: 700; color: var(--text-main); font-size: 1.3rem; letter-spacing: 1px; text-transform: uppercase; }
+  nav div a { margin-left: 24px; text-decoration: none; color: var(--text-muted); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+  nav div a:hover { color: var(--accent); }
+
+  /* Hero Section (Massively Style) */
+  .hero { 
+    background: linear-gradient(rgba(31, 34, 39, 0.7), rgba(31, 34, 39, 0.85)), url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=1600&q=80') center/cover; 
+    text-align: center; padding: 140px 20px; border-bottom: 1px solid var(--border); 
+  }
+  .hero h1 { font-size: 3.5rem; margin-bottom: 20px; font-weight: 700; letter-spacing: 2px; }
+  .hero p { max-width: 700px; margin: 0 auto 30px; color: var(--text-muted); font-size: 1.2rem; }
+  
+  .btn { display: inline-block; background: transparent; color: var(--text-main); padding: 14px 32px; border: 2px solid var(--accent); border-radius: 4px; font-size: 0.9rem; font-weight: 700; cursor: pointer; text-decoration: none; text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s; }
+  .btn:hover { background: var(--accent); color: #fff; }
+  .btn:disabled { border-color: #555; color: #555; cursor: not-allowed; }
+
+  section { max-width: 1100px; margin: auto; padding: 80px 20px; border-bottom: 1px solid var(--border); }
+  h2 { text-align: center; margin-bottom: 40px; font-size: 2.2rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+
+  /* Hakkımda */
+  .hakkimda { display: flex; gap: 50px; align-items: center; flex-wrap: wrap; background: var(--bg-box); padding: 40px; border-radius: 8px; border: 1px solid var(--border); }
+  .hakkimda img { width: 320px; max-width: 100%; border-radius: 6px; object-fit:cover; height: 380px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+  .hakkimda div { flex: 1; min-width: 280px; }
+  .hakkimda p { color: var(--text-muted); margin-bottom: 16px; font-size: 1.05rem; }
+
+  /* Hizmetler (Görsel Ağırlıklı Kartlar) */
+  .kartlar { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+  .kart { background: var(--bg-box); border-radius: 8px; overflow: hidden; border: 1px solid var(--border); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .kart:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.4); }
+  .kart img { width: 100%; height: 210px; object-fit: cover; }
+  .kart-icerik { padding: 25px; }
+  .kart h3 { margin-bottom: 12px; color: var(--text-main); font-size: 1.3rem; }
+  .kart p { color: var(--text-muted); font-size: 0.95rem; }
+
+  /* Randevu & Anket Kutusu */
+  .kutu { background: var(--bg-box); border-radius: 8px; padding: 40px; max-width: 750px; margin: auto; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+  .durum { text-align: center; margin-bottom: 30px; font-weight: 700; color: var(--accent); letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem; }
+  
+  label { display: block; margin-top: 18px; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px; color: var(--text-main); }
+  input, select, textarea { width: 100%; padding: 12px 15px; margin-top: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 4px; font-size: 1rem; color: #fff; font-family: inherit; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); }
+  select option { background: #252930; color: #fff; }
+
+  .adim { display: none; }
+  .adim.aktif { display: block; }
+
+  /* Takvim Tasarımı */
+  .takvim-ust { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .takvim-ust button { background: transparent; color: var(--text-main); border: 1px solid var(--border); border-radius: 4px; padding: 8px 16px; cursor: pointer; transition: 0.3s; }
+  .takvim-ust button:hover { background: var(--accent); border-color: var(--accent); }
+  
+  .gunler { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; }
+  .gunler .baslik { font-weight: 700; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; }
+  .gun { padding: 14px 0; border-radius: 4px; background: rgba(255,255,255,0.03); cursor: pointer; border: 1px solid var(--border); font-size: 0.95rem; transition: 0.2s; }
+  .gun:hover { background: rgba(33, 178, 166, 0.2); border-color: var(--accent); }
+  .gun.pasif { background: rgba(255,255,255,0.01); color: #444; cursor: not-allowed; border-color: transparent; }
+  .gun.secili { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .saatler { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 20px; }
+  .saat { padding: 10px; text-align: center; background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: var(--text-main); border-radius: 4px; cursor: pointer; transition: 0.2s; }
+  .saat:hover { border-color: var(--accent); }
+  .saat.secili { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .saat.dolu { background: rgba(255,255,255,0.01); border-color: transparent; color: #444; cursor: not-allowed; text-decoration: line-through; }
+
+  .onay { text-align: center; }
+  .onay h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.8rem; }
+  .onay p { color: var(--text-muted); }
+
+  footer { background: #181a1f; color: var(--text-muted); text-align: center; padding: 40px 20px; font-size: 0.9rem; border-top: 1px solid var(--border); }
+  @media(max-width:768px){ nav div a{display:none;} .hero h1{font-size:2.3rem;} .hakkimda{padding:20px;} }
 </style>
 </head>
 <body>
 
 <header>
   <nav>
-    <span class="logo">🥗 Dyt. Adınız Soyadınız</span>
+    <span class="logo">🌿 Dyt. Aylin Uysal | Klinik Laboratuvar Projesi</span>
     <div>
       <a href="#hakkimda">Hakkımda</a>
       <a href="#hizmetler">Hizmetler</a>
@@ -68,45 +107,63 @@
 </header>
 
 <div class="hero">
-  <h1>Sağlıklı Beslenme, Kalıcı Değişim</h1>
-  <p>Size özel beslenme programlarıyla hedeflerinize sağlıklı ve sürdürülebilir şekilde ulaşın.</p>
+  <h1>Sağlıklı Beslenme, Bilimsel Dönüşüm</h1>
+  <p>Akdeniz Üniversitesi Beslenme ve Diyetetik Bölümü klinik altyapısıyla hazırlanan profesyonel danışmanlık ve analiz platformu.</p>
   <a href="#randevu" class="btn">Hemen Randevu Al</a>
 </div>
 
 <section id="hakkimda">
-  <h2>Hakkımda</h2>
+  <h2>Proje Hakkında & Vizyonumuz</h2>
   <div class="hakkimda">
-    <img src="img/diyetisyen.jpg" alt="Diyetisyen">
+    <img src="https://images.unsplash.com/photo-1594824813569-4279b8f2d572?auto=format&fit=crop&w=600&q=80" alt="Diyetisyen">
     <div>
-      <p>Merhaba, ben Dyt. Adınız Soyadınız. Beslenme ve diyetetik alanında uzmanım. Kilo yönetimi, sporcu beslenmesi, hastalıklarda beslenme ve çocuk beslenmesi konularında danışanlarıma kişiye özel programlar hazırlıyorum.</p>
-      <br>
-      <p>Amacım yasaklarla dolu diyetler değil, hayatınıza uyan, keyif alarak sürdürebileceğiniz bir beslenme düzeni kurmaktır.</p>
+      <p>Geleceğin klinik diyetisyenleri olarak, beslenme biliminin ışığında insan sağlığını optimize etmek ve kalıcı yaşam tarzı değişiklikleri inşa etmek için yola çıktık.</p>
+      <p>Bu uygulama; güncel fizyolojik parametreler, antropometrik ölçüm analizleri ve kanıta dayalı beslenme ilkeleri harmanlanarak bir sınıf projesi kapsamında özenle geliştirilmiştir.</p>
+      <p>Amacımız; geçici diyet kalıpları yaratmak değil, bireyin metabolik gerçekliğine tam uyum sağlayan, sürdürülebilir ve bilimsel bir beslenme bilinci kazandırmaktır.</p>
     </div>
   </div>
 </section>
 
-<section id="hizmetler" style="background:#fff">
-  <h2>Hizmetlerim</h2>
+<section id="hizmetler">
+  <h2>Klinik Hizmet Alanlarımız</h2>
   <div class="kartlar">
-    <div class="kart"><img src="img/yemek1.jpg" alt="Kilo yönetimi"><h3>Kilo Yönetimi</h3><p>Kişiye özel, sürdürülebilir kilo verme ve koruma programları.</p></div>
-    <div class="kart"><img src="img/yemek2.jpg" alt="Sporcu beslenmesi"><h3>Sporcu Beslenmesi</h3><p>Performansınızı artıran beslenme planları.</p></div>
-    <div class="kart"><img src="img/yemek3.jpg" alt="Klinik beslenme"><h3>Hastalıklarda Beslenme</h3><p>Diyabet, tansiyon, tiroid gibi durumlar için beslenme desteği.</p></div>
+    <div class="kart">
+      <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80" alt="Kilo Yönetimi">
+      <div class="kart-icerik">
+        <h3>Klinik Kilo Yönetimi</h3>
+        <p>Bireysel bazal metabolizma hızı ve kompozisyon analizleri eşliğinde sağlıklı kilo alma, verme ve koruma protokolleri.</p>
+      </div>
+    </div>
+    <div class="kart">
+      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="Sporcu Beslenmesi">
+      <div class="kart-icerik">
+        <h3>Sporcu Beslenmesi</h3>
+        <p>Farklı branşlardaki sporcuların enerji harcamaları göz önüne alınarak performans artırıcı makro ve mikro besin planlaması.</p>
+      </div>
+    </div>
+    <div class="kart">
+      <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Klinik Beslenme">
+      <div class="kart-icerik">
+        <h3>Hastalıklarda Tıbbi Beslenme</h3>
+        <p>Metabolik sendrom, diyabet, kardiyovasküler rahatsızlıklar ve insülin direncine yönelik özel tıbbi beslenme tedavileri.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section id="randevu">
-  <h2>Randevu Al</h2>
+  <h2>Online Randevu & Ön Değerlendirme</h2>
   <div class="kutu">
-    <div class="durum" id="durum">Adım 1 / 3: Ön Değerlendirme Anketi</div>
+    <div class="durum" id="durum">Adım 1 / 3: Ön Değerlendirme Formu</div>
 
     <!-- ADIM 1: ANKET -->
     <form id="anketFormu" class="adim aktif">
-      <label>Ad Soyad<input type="text" id="ad" required></label>
-      <label>E-posta<input type="email" id="eposta" required></label>
+      <label>Ad Soyad<input type="text" id="ad" required placeholder="Adınızı ve soyadınızı giriniz"></label>
+      <label>E-posta<input type="email" id="eposta" required placeholder="ornek@mail.com"></label>
       <label>Telefon<input type="tel" id="telefon" placeholder="05xx xxx xx xx" required></label>
-      <label>Yaş<input type="number" id="yas" min="5" max="100" required></label>
-      <label>Boy (cm)<input type="number" id="boy" required></label>
-      <label>Kilo (kg)<input type="number" id="kilo" required></label>
+      <label>Yaş<input type="number" id="yas" min="5" max="100" required placeholder="Yaşınız"></label>
+      <label>Boy (cm)<input type="number" id="boy" required placeholder="Örn: 165"></label>
+      <label>Kilo (kg)<input type="number" step="0.1" id="kilo" required placeholder="Örn: 60"></label>
       <label>Hedefiniz
         <select id="hedef" required>
           <option value="">Seçiniz</option>
@@ -114,71 +171,68 @@
           <option>Kilo almak</option>
           <option>Kilo korumak</option>
           <option>Sağlıklı beslenmek</option>
-          <option>Hastalık nedeniyle diyet</option>
+          <option>Hastalık nedeniyle tıbbi beslenme</option>
         </select>
       </label>
-      <label>Bilinen hastalık veya alerjileriniz<textarea id="hastalik" rows="3"></textarea></label>
+      <label>Bilinen rahatsızlık veya alerjileriniz<textarea id="hastalik" rows="3" placeholder="Varsa kronik rahatsızlıklarınız, gıda alerjileriniz..."></textarea></label>
       <label>Günlük fiziksel aktivite düzeyiniz
         <select id="aktivite" required>
           <option value="">Seçiniz</option>
-          <option>Çok az</option>
-          <option>Haftada 1-2 gün</option>
-          <option>Haftada 3-5 gün</option>
-          <option>Neredeyse her gün</option>
+          <option>Çok az / Hareketsiz yaşam</option>
+          <option>Haftada 1-2 gün hafif egzersiz</option>
+          <option>Haftada 3-5 gün orta düzey egzersiz</option>
+          <option>Haftanın her günü aktif / Yoğun antrenman</option>
         </select>
       </label>
-      <label style="font-weight:400"><input type="checkbox" id="kvkk" required style="width:auto"> Kişisel verilerimin randevu amacıyla işlenmesini kabul ediyorum (KVKK).</label>
+      <label style="font-weight:400; font-size:0.85rem; color:var(--text-muted); margin-top:20px;">
+        <input type="checkbox" id="kvkk" required style="width:auto; margin-right:8px;"> Kişisel verilerimin klinik eğitim ve randevu amaçlarıyla işlenmesini kabul ediyorum (KVKK).
+      </label>
       <br>
-      <button type="submit" class="btn">Anketi Tamamla ve Devam Et</button>
+      <button type="submit" class="btn" style="width:100%; margin-top:20px;">Anketi Tamamla ve Devam Et</button>
     </form>
 
     <!-- ADIM 2: TAKVİM -->
     <div id="takvimAlani" class="adim">
       <div class="takvim-ust">
-        <button id="oncekiAy">◀</button>
-        <strong id="ayBasligi"></strong>
-        <button id="sonrakiAy">▶</button>
+        <button id="oncekiAy" type="button">◀ Önceki</button>
+        <strong id="ayBasligi" style="letter-spacing:1px;"></strong>
+        <button id="sonrakiAy" type="button">Sonraki ▶</button>
       </div>
       <div class="gunler" id="gunler"></div>
-      <h3 style="margin-top:20px">Saat seçin</h3>
-      <div class="saatler" id="saatler"><p>Önce bir gün seçin.</p></div>
+      <h3 style="margin-top:25px; font-size:1rem; color:var(--text-main); text-transform:uppercase; letter-spacing:1px;">Uygun Saat Dilimi Seçin</h3>
+      <div class="saatler" id="saatler"><p style="color:var(--text-muted); grid-column:1/-1;">Lütfen önce takvimden aktif bir gün seçiniz.</p></div>
       <br>
-      <button class="btn" id="randevuOnayla" disabled>Randevuyu Onayla</button>
+      <button class="btn" id="randevuOnayla" disabled style="width:100%; margin-top:10px;">Randevuyu Kesinleştir</button>
     </div>
 
     <!-- ADIM 3: ONAY -->
     <div id="onayAlani" class="adim onay">
-      <h3>✅ Randevunuz oluşturuldu!</h3>
-      <p id="onayMetni"></p>
-      <br>
-      <p>Onay ve hatırlatma bilgilendirmesi e-posta adresinize gönderildi. Randevuyu takviminize de ekleyebilirsiniz:</p>
-      <br>
-      <button class="btn" id="takvimeEkle">📅 Takvimime Ekle (Hatırlatıcılı)</button>
+      <h3>✨ Randevunuz Başarıyla Oluşturuldu!</h3>
+      <p id="onayMetni" style="font-size:1.1rem; color:#fff; margin:15px 0;"></p>
+      <p>Seçtiğiniz randevu zamanı cihazınızın takvimine hatırlatıcılı olarak otomatik eklenmiştir.</p>
     </div>
   </div>
 </section>
 
-<section id="iletisim" style="background:var(--acik)" >
-  <h2>İletişim</h2>
-  <p style="text-align:center">📍 Adres: Örnek Mah. Örnek Sok. No:1, İstanbul<br>📞 0555 000 00 00<br>✉️ ornek@mail.com</p>
+<section id="iletisim" style="background: rgba(255,255,255,0.02);">
+  <h2>İletişim & Konum</h2>
+  <p style="text-align:center; color: var(--text-muted); font-size: 1.05rem;">
+    📍 <strong>Akdeniz Üniversitesi</strong>, Sağlık Bilimleri Fakültesi, Beslenme ve Diyetetik Bölümü, Dumlupınar Bulvarı, 07058 Konyaaltı/Antalya<br><br>
+    ✉️ E-posta: klinikproje@akdeniz.edu.tr | 📞 Danışma Hattı: 0242 310 60 00
+  </p>
 </section>
 
-<footer>© 2026 Dyt. Adınız Soyadınız. Tüm hakları saklıdır.</footer>
+<footer>
+  <p>© 2026 Akdeniz Üniversitesi | Beslenme ve Diyetetik Bölümü Projesi. Tüm hakları saklıdır.</p>
+</footer>
 
 <script>
-/* ========== AYARLAR ========== */
-// Randevu saatleri
 const SAATLER = ["09:00","10:00","11:00","13:00","14:00","15:00","16:00"];
-// Çalışılmayan günler: 0=Pazar, 6=Cumartesi
-const KAPALI_GUNLER = [0,6];
-// Randevu süresi (dakika)
+const KAPALI_GUNLER = [0,6]; // Pazar, Cumartesi
 const SURE_DK = 45;
-// Formspree adresi (aşağıdaki açıklamaya bakın). Boşsa mail gönderimi atlanır.
-const FORMSPREE_URL = ""; // örn: https://formspree.io/f/abcdwxyz
-/* ============================== */
-
 const AYLAR = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
 const GUNLER = ["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"];
+
 let bugun = new Date(); bugun.setHours(0,0,0,0);
 let gosterilen = new Date(bugun.getFullYear(), bugun.getMonth(), 1);
 let seciliGun = null, seciliSaat = null, hasta = {}, sonRandevu = null;
@@ -189,23 +243,26 @@ function adimGoster(id, metin){
   document.getElementById('durum').textContent = metin;
 }
 
-// Dolu saatler tarayıcıda saklanır (basit sürüm)
 function doluSaatler(){ return JSON.parse(localStorage.getItem('randevular')||'[]'); }
 function anahtar(d,s){ return d.toDateString()+' '+s; }
 
-// ANKET
 document.getElementById('anketFormu').addEventListener('submit', e=>{
   e.preventDefault();
   hasta = {
-    ad:ad.value, eposta:eposta.value, telefon:telefon.value, yas:yas.value,
-    boy:boy.value, kilo:kilo.value, hedef:hedef.value,
-    hastalik:hastalik.value, aktivite:aktivite.value
+    ad:document.getElementById('ad').value,
+    eposta:document.getElementById('eposta').value,
+    telefon:document.getElementById('telefon').value,
+    yas:document.getElementById('yas').value,
+    boy:document.getElementById('boy').value,
+    kilo:document.getElementById('kilo').value,
+    hedef:document.getElementById('hedef').value,
+    hastalik:document.getElementById('hastalik').value,
+    aktivite:document.getElementById('aktivite').value
   };
-  adimGoster('takvimAlani','Adım 2 / 3: Tarih ve Saat Seçimi');
+  adimGoster('takvimAlani','Adım 2 / 3: Uygun Tarih ve Saat Seçimi');
   takvimCiz();
 });
 
-// TAKVİM
 function takvimCiz(){
   const y = gosterilen.getFullYear(), m = gosterilen.getMonth();
   document.getElementById('ayBasligi').textContent = AYLAR[m]+' '+y;
@@ -224,6 +281,7 @@ function takvimCiz(){
     kap.appendChild(div);
   }
 }
+
 function saatCiz(){
   const kap = document.getElementById('saatler'); kap.innerHTML='';
   const dolu = doluSaatler().map(r=>r.k);
@@ -236,11 +294,11 @@ function saatCiz(){
     kap.appendChild(d);
   });
 }
+
 document.getElementById('oncekiAy').onclick = ()=>{ gosterilen.setMonth(gosterilen.getMonth()-1); takvimCiz(); };
 document.getElementById('sonrakiAy').onclick = ()=>{ gosterilen.setMonth(gosterilen.getMonth()+1); takvimCiz(); };
 
-// RANDEVU ONAYI
-document.getElementById('randevuOnayla').onclick = async ()=>{
+document.getElementById('randevuOnayla').onclick = ()=>{
   const [sa,dk] = seciliSaat.split(':').map(Number);
   const bas = new Date(seciliGun); bas.setHours(sa,dk,0,0);
   const bit = new Date(bas.getTime()+SURE_DK*60000);
@@ -252,42 +310,31 @@ document.getElementById('randevuOnayla').onclick = async ()=>{
 
   const tarihMetni = bas.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',weekday:'long'});
   document.getElementById('onayMetni').textContent = `${tarihMetni}, saat ${seciliSaat}`;
-
-  // Diyetisyene ve hastaya e-posta (Formspree)
-  if(FORMSPREE_URL){
-    try{
-      await fetch(FORMSPREE_URL,{
-        method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-        body: JSON.stringify({
-          _subject:'Yeni randevu: '+hasta.ad,
-          randevu: tarihMetni+' '+seciliSaat,
-          ...hasta
-        })
-      });
-    }catch(err){ console.log('Mail gönderilemedi', err); }
-  }
-  adimGoster('onayAlani','Adım 3 / 3: Onay');
+  
+  // Otomatik Hatırlatıcılı Takvim İndirme (.ics)
+  otomatikTakvimeEkle();
+  
+  adimGoster('onayAlani','Adım 3 / 3: İşlem Tamamlandı');
 };
 
-// TAKVİME EKLE (.ics dosyası, hatırlatıcılı)
-document.getElementById('takvimeEkle').onclick = ()=>{
+function otomatikTakvimeEkle(){
   const f = d => d.toISOString().replace(/[-:]/g,'').split('.')[0]+'Z';
   const ics = [
-    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Diyetisyen//TR','BEGIN:VEVENT',
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Diyetisyen Klinik//TR','BEGIN:VEVENT',
     'UID:'+Date.now()+'@diyetisyen',
     'DTSTAMP:'+f(new Date()),
     'DTSTART:'+f(sonRandevu.bas),
     'DTEND:'+f(sonRandevu.bit),
-    'SUMMARY:Diyetisyen Randevusu',
-    'DESCRIPTION:Dyt. Adınız Soyadınız ile randevunuz.',
+    'SUMMARY:Klinik Beslenme Randevusu - Dyt. Aylin Uysal',
+    'DESCRIPTION:Akdeniz Üniversitesi Beslenme ve Diyetetik Klinik Randevusu.',
     'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:Yarın diyetisyen randevunuz var','END:VALARM',
     'BEGIN:VALARM','TRIGGER:-PT2H','ACTION:DISPLAY','DESCRIPTION:2 saat sonra diyetisyen randevunuz var','END:VALARM',
     'END:VEVENT','END:VCALENDAR'
   ].join('\r\n');
   const blob = new Blob([ics],{type:'text/calendar'});
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download = 'randevu.ics'; a.click();
-};
+  a.href = URL.createObjectURL(blob); a.download = 'klinik-randevu.ics'; a.click();
+}
 </script>
 </body>
 </html>
